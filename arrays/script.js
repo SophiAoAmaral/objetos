@@ -1,36 +1,51 @@
-//const instrumentos = ['Guitarra', 'Baixo', 'Violão'];
-//const precos = [49, 99, 69, 89];
+const comidas = ['Pizza', 'Frango', 'Carne', 'Macarrão'];
+// Remova o primeiro valor de comidas e coloque em uma variável
+const primeiroItem = comidas.shift();
+console.log(primeiroItem)
+// Remova o último valor de comidas e coloque em uma variável
+const ultimoItem = comidas.pop()
+console.log(ultimoItem)
+// Adicione 'Arroz' ao final da array
+comidas.push('Arroz')
+console.log(comidas)
+// Adicione 'Peixe' e 'Batata' ao início da array
+comidas.unshift('Peixe', 'Batata')
+console.log(comidas)
 
-//const dados = [new String('Tipo 1'), ['Carro', 'Portas', {cor: 'Azul', preco: 2000}],
- //function andar(nome) { console.log(nome) }];
+const estudantes = ['Marcio', 'Brenda', 'Joana', 'Kleber', 'Julia'];
+// Arrume os estudantes em ordem alfabética
+estudantes.sort()
+console.log(estudantes)
+// Inverta a ordem dos estudantes
+estudantes.reverse()
+console.log(estudantes)
+// Verifique se Joana faz parte dos estudantes
+console.log(estudantes.includes('Joana'))
+// Verifique se Juliana faz parte dos estudantes
+console.log(estudantes.includes('Juliana'))
 
-//const carros = new Array('Ford', 'Fiat', 'Honda');
+let html = `<section>
+              <div>Sobre</div>
+              <div>Produtos</div>
+              <div>Contato</div>
+            </section>`
+// Substitua section por ul e div com li,
+// utilizando split e join
 
-//carros[2] = 'Ferrari';
-//carros[3] = 'Porsche'
-//console.log(carros.length)
+html = html.split('section');
+html = html.join('ul')
+html = html.split('div');
+html = html.join('li')
+console.log(html)
+
+const carros = ['Ford', 'Fiat', 'VW', 'Honda'];
+// Remova o último carro, mas antes de remover
+// salve a array original em outra variável
+const NovosCarros = carros.slice();
 
 
-///const li = document.querySelectorAll('li');
-
-//console.log(Array.isArray(li))// false 
-//const arrayLi = Array.from(li)
-//console.log(li)
-//console.log(arrayLi)
-
-//const frutas = ['Banana', 'Pêra', ['Uva Roxa', 'Uva Verde']];
-
-//console.log(frutas.length)
-
-
-//instrumentos.sort();//organiza por ordem alfabetica mas se foremm numeros ele vai de numero em numero 1234 sera nessa ordem
-//console.log(instrumentos)
-
-const carros = ['Ford', 'Fiat', 'VW'];
-
-console.log(carros.unshift('a'))//(4) ['a', 'Ford', 'Fiat', 'VW']
-console.log(carros.push('a', 'Gol'))//(6) ['a', 'Ford', 'Fiat', 'VW', 'a', 'Gol']
-console.log(carros.pop())// Gol (5) ['a', 'Ford', 'Fiat', 'VW', 'a']
-console.log(carros.shift())// a  (4) ['Ford', 'Fiat', 'VW', 'a']
-console.log(carros.reverse())// inverte o array
+console.log(carros.pop());
 console.log(carros)
+console.log(NovosCarros);
+
+
