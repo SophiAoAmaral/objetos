@@ -1,45 +1,61 @@
-//const carros = ['Ford', 'Fiat', 'Honda']
-//carros.forEach((item, index, array)=>{
- // console.log(index, item.toLocaleUpperCase())
-//})
+// Selecione cada curso e retorne uma array
+// com objetos contendo o título, descricao,
+// aulas e horas de cada curso
+ const cursos = document.querySelectorAll('.curso');
+ const arrayCursos = Array.from(cursos)
 
-const carros = ['Ford', 'Fiat', 'Honda']
+ const objetoCurso = arrayCursos.map((curso)=>{
+  const titulo = curso.querySelector('h1').innerText
+  const descricao = curso.querySelector('p').innerText;
+  const aulas = curso.querySelector('.aulas').innerText;
+  const horas = curso.querySelector('.horas').innerText
+  return{
+    titulo : titulo,
+    descricao: descricao,
+    aulas: aulas,
+    horas:horas
 
- const novaArray = carros.map((item,index, array)=>{
-  console.log(item.toUpperCase())
-  return item
+  }
+ })
+console.log(objetoCurso)
+// Retorne uma lista com os
+// números maiores que 100
+const numeros = [3, 44, 333, 23, 122, 322, 33];
+const maioresQue100 = numeros.filter(n => 100)
+
+// Verifique se Baixo faz parte
+// da lista de instrumentos e retorne true
+const instrumentos = ['Guitarra', 'Baixo', 'Bateria', 'Teclado']
+const possueBaixo = instrumentos.some((item)=>{
+  return item === 'Baixo'
 })
-console.log(novaArray)
 
-const numeros = [2,4,5,3,2]
-const numerosx2 = numeros.map( n => n *2)
-console.log(numerosx2)
-
-const aulas = [
-  {nome: 'HTML 1', min: 15},
-  {nome: 'HTML 2', min: 10},
-  {nome: 'CSS 1', min: 20},
-  {nome: 'JS 1', min: 25},
+// Retorne o valor total das compras
+const compras = [
+  {
+    item: 'Banana',
+    preco: 'R$ 4,99'
+  },
+  {
+    item: 'Ovo',
+    preco: 'R$ 2,99'
+  },
+  {
+    item: 'Carne',
+    preco: 'R$ 25,49'
+  },
+  {
+    item: 'Refrigerante',
+    preco: 'R$ 5,35'
+  },
+  {
+    item: 'Quejo',
+    preco: 'R$ 10,60'
+  }
 ]
+const valorTotal = compras.reduce((acumulador, item)=>{
+  const precoLimpo = +item.preco.replace('R$', '').replace(',', '.')
 
-const tempoAula = aulas.map(aula => aula.min)
-
-const nomeAulas = (aula) => aula.nome;
-
-const arrayNomeAulas = aulas.map(nomeAulas)
-
-
-console.log(tempoAula)
-
-const aulas2 = [
-  {nome: 'HTML 1', min: 15},
-  {nome: 'HTML 2', min: 10},
-  {nome: 'CSS 1', min: 20},
-  {nome: 'JS 1', min: 25},
-]
-
-const listaAulas = aulas.reduce((acumulador, atual, index)=>{
-  acumulador[index] = atual.nome;
-  console.log(acumulador)
-  return acumulador
-}, {})
+  return acumulador + precoLimpo
+},0)
+console.log(valorTotal)
