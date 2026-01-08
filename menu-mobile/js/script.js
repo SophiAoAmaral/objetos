@@ -5,7 +5,7 @@ import initTab from './modules/tab-nav.js'
 import initModal from './modules/modal.js'
 import initTootip from './modules/tooltip.js'
 import initDropdownMenu from './modules/initDropdownMenu.js'
-
+import menumobile from './modules/menu-mobile.js';
 
 initScrollSuave();
 initAccordion();
@@ -14,4 +14,5 @@ initTab();
 initModal();
 initTootip();
 initDropdownMenu();
+menumobile();
 
